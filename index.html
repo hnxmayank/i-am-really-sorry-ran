@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>for you 💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    linear-gradient(
+    135deg,
+    #ffd7e5 0%,
+    #fff1f6 30%,
+    #fff8fb 65%,
+    #ffe4ef 100%
+    );
+}
+
+/* =========================
+   AURORA BACKGROUND
+========================= */
+
+.bg{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-10;
+}
+
+.blob{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    opacity:.55;
+
+    animation:floatBlob 12s ease-in-out infinite;
+}
+
+.blob1{
+
+    width:320px;
+    height:320px;
+
+    background:#ffb8cf;
+
+    top:-100px;
+    left:-100px;
+}
+
+.blob2{
+
+    width:420px;
+    height:420px;
+
+    background:#ffd9e7;
+
+    bottom:-140px;
+    right:-120px;
+
+    animation-delay:2s;
+}
+
+.blob3{
+
+    width:250px;
+    height:250px;
+
+    background:#fff7fb;
+
+    top:45%;
+    left:45%;
+
+    animation-delay:4s;
+}
+
+@keyframes floatBlob{
+
+    0%{
+
+        transform:
+        translateY(0px)
+        translateX(0px)
+        scale(1);
+    }
+
+    50%{
+
+        transform:
+        translateY(-30px)
+        translateX(20px)
+        scale(1.08);
+    }
+
+    100%{
+
+        transform:
+        translateY(0px)
+        translateX(0px)
+        scale(1);
+    }
+
+}
+
+/* =========================
+   MOVING GRID TEXTURE
+========================= */
+
+.texture{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+    radial-gradient(
+    rgba(255,255,255,.8) 1px,
+    transparent 1px
+    );
+
+    background-size:28px 28px;
+
+    opacity:.28;
+
+    animation:gridMove 25s linear infinite;
+
+    z-index:-9;
+}
+
+@keyframes gridMove{
+
+    0%{
+        transform:translate(0,0);
+    }
+
+    100%{
+        transform:translate(-120px,-120px);
+    }
+
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.hearts{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-2;
+}
+
+.hearts span{
+
+    position:absolute;
+
+    bottom:-100px;
+
+    font-size:22px;
+
+    opacity:.75;
+
+    filter:blur(.2px);
+
+    animation:floatUp linear infinite;
+}
+
+.hearts span:nth-child(1){
+
+    left:8%;
+    animation-duration:13s;
+}
+
+.hearts span:nth-child(2){
+
+    left:18%;
+    animation-duration:16s;
+}
+
+.hearts span:nth-child(3){
+
+    left:35%;
+    animation-duration:14s;
+}
+
+.hearts span:nth-child(4){
+
+    left:52%;
+    animation-duration:18s;
+}
+
+.hearts span:nth-child(5){
+
+    left:68%;
+    animation-duration:12s;
+}
+
+.hearts span:nth-child(6){
+
+    left:85%;
+    animation-duration:17s;
+}
+
+@keyframes floatUp{
+
+    0%{
+
+        transform:
+        translateY(0px)
+        rotate(0deg);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:.8;
+    }
+
+    100%{
+
+        transform:
+        translateY(-120vh)
+        rotate(360deg);
+
+        opacity:0;
+    }
+
+}
+
+/* =========================
+   SPARKLES
+========================= */
+
+.sparkles{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+}
+
+.sparkles span{
+
+    position:absolute;
+
+    width:6px;
+    height:6px;
+
+    background:white;
+
+    border-radius:50%;
+
+    opacity:.7;
+
+    animation:twinkle 4s infinite;
+}
+
+.sparkles span:nth-child(1){
+
+    top:20%;
+    left:15%;
+}
+
+.sparkles span:nth-child(2){
+
+    top:35%;
+    left:80%;
+    animation-delay:1s;
+}
+
+.sparkles span:nth-child(3){
+
+    top:70%;
+    left:25%;
+    animation-delay:2s;
+}
+
+.sparkles span:nth-child(4){
+
+    top:60%;
+    left:65%;
+    animation-delay:3s;
+}
+
+.sparkles span:nth-child(5){
+
+    top:40%;
+    left:45%;
+    animation-delay:1.5s;
+}
+
+@keyframes twinkle{
+
+    0%{
+
+        transform:scale(0);
+
+        opacity:0;
+    }
+
+    50%{
+
+        transform:scale(1.5);
+
+        opacity:1;
+    }
+
+    100%{
+
+        transform:scale(0);
+
+        opacity:0;
+    }
+
+}
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.card{
+
+    width:min(430px,92vw);
+
+    min-height:720px;
+
+    position:relative;
+
+    border-radius:40px;
+
+    overflow:hidden;
+
+    padding:22px;
+
+    background:
+    rgba(255,255,255,.16);
+
+    border:
+    1px solid rgba(255,255,255,.38);
+
+    backdrop-filter:
+    blur(35px)
+    saturate(180%);
+
+    -webkit-backdrop-filter:
+    blur(35px)
+    saturate(180%);
+
+    box-shadow:
+
+    0 25px 70px rgba(255,182,193,.22),
+
+    inset 0 1px 1px rgba(255,255,255,.45);
+
+    animation:cardShow 1s ease;
+
+    z-index:10;
+}
+
+/* GLASS SHINE */
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-50%;
+    left:-50%;
+
+    width:200%;
+    height:200%;
+
+    background:
+    linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.25),
+    transparent
+    );
+
+    transform:rotate(25deg);
+
+    animation:shine 7s linear infinite;
+}
+
+@keyframes shine{
+
+    0%{
+
+        transform:
+        translateX(-100%)
+        rotate(25deg);
+    }
+
+    100%{
+
+        transform:
+        translateX(100%)
+        rotate(25deg);
+    }
+
+}
+
+@keyframes cardShow{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(40px)
+        scale(.94);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0px)
+        scale(1);
+    }
+
+}
+
+/* =========================
+   IMAGE BOX
+========================= */
+
+.image-box{
+
+    width:100%;
+
+    height:320px;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    margin-bottom:25px;
+
+    border:
+    1px solid rgba(255,255,255,.3);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+}
+
+.image-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    180deg,
+    rgba(255,255,255,.18),
+    transparent 40%
+    );
+
+    z-index:2;
+}
+
+.image-box img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    animation:zoom 10s ease-in-out infinite;
+}
+
+@keyframes zoom{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.06);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+/* =========================
+   TEXT
+========================= */
+
+h1{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:58px;
+
+    text-align:center;
+
+    color:#6f4252;
+
+    margin-bottom:16px;
+
+    animation:fadeText 1s ease;
+}
+
+p{
+
+    text-align:center;
+
+    color:#7d5c67;
+
+    line-height:1.95;
+
+    font-size:15px;
+
+    width:92%;
+
+    margin:auto;
+
+    min-height:90px;
+
+    animation:fadeText 1s ease;
+}
+
+@keyframes fadeText{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0px);
+    }
+
+}
+
+/* =========================
+   BUTTON AREA
+========================= */
+
+.button-area{
+
+    position:relative;
+
+    width:100%;
+
+    height:170px;
+
+    margin-top:10px;
+}
+
+/* YES BUTTON */
+
+#yesBtn{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:20px;
+
+    transform:translateX(-50%);
+
+    width:165px;
+
+    height:56px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #ff8fb7,
+    #ff5f95
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    z-index:5;
+
+    transition:
+    .25s;
+
+    box-shadow:
+    0 12px 25px rgba(255,95,149,.35);
+}
+
+#yesBtn:hover{
+
+    transform:
+    translateX(-50%)
+    scale(1.06);
+}
+
+/* NO BUTTON */
+
+#noBtn{
+
+    position:absolute;
+
+    top:20px;
+    left:20px;
+
+    width:90px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:
+    rgba(255,255,255,.85);
+
+    color:#555;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+    z-index:6;
+
+    transition:
+    left .35s ease,
+    top .35s ease,
+    transform .2s ease;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+    0 8px 18px rgba(0,0,0,.08);
+}
+
+#noBtn:hover{
+
+    transform:scale(1.05);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .card{
+
+        min-height:680px;
+
+        padding:18px;
+    }
+
+    .image-box{
+
+        height:270px;
+    }
+
+    h1{
+
+        font-size:48px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- BG -->
+
+<div class="bg">
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
+
+</div>
+
+<div class="texture"></div>
+
+<!-- FLOATING HEARTS -->
+
+<div class="hearts">
+
+<span>💗</span>
+<span>✨</span>
+<span>🌸</span>
+<span>🤍</span>
+<span>🫶</span>
+<span>💞</span>
+
+</div>
+
+<!-- SPARKLES -->
+
+<div class="sparkles">
+
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+<!-- CARD -->
+
+<div class="card">
+
+    <div class="image-box">
+
+        <!-- PUT YOUR GIF LINK HERE -->
+
+        <img
+        id="mainImage"
+
+        src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyOGx5ZHpld2cwYndyaXk2MXp5MnQ1Y3A4dm02cnh3OGg3djI0MHdxayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kXdo4BgGoFC80/giphy.gif"
+
+        alt="gif">
+
+    </div>
+
+    <h1 id="title">
+        i'm sorry
+    </h1>
+
+    <p id="text">
+
+        I know I made a mistake.
+        A real one.
+
+        And honestly...
+        losing you scares me more than admitting how badly I messed up.
+
+    </p>
+
+    <div class="button-area">
+
+        <button id="noBtn">
+            no
+        </button>
+
+        <button id="yesBtn">
+            yes
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+const noBtn =
+document.getElementById("noBtn");
+
+const title =
+document.getElementById("title");
+
+const text =
+document.getElementById("text");
+
+const image =
+document.getElementById("mainImage");
+
+let count = 0;
+
+/* TITLES */
+
+const titles = [
+
+"please don't leave mee",
+
+"i'll literally cry fr",
+
+"i messed up badly",
+
+"i replay our chats daily",
+
+"i miss you so much",
+
+"i really don't wanna lose you",
+
+"please stop clicking no",
+
+"just press yes 🥹"
+
+];
+
+/* TEXTS */
+
+const texts = [
+
+"I know I hurt you badly.",
+
+"I've been thinking about us nonstop.",
+
+"You deserved love, not pain.",
+
+"If I could undo it, I would.",
+
+"I miss your care and presence.",
+
+"I regret everything honestly.",
+
+"But my feelings for you are still real.",
+
+"please... 💗"
+
+];
+
+/* GIFS */
+
+const gifs = [
+
+"https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyYnE5dzVrcXc4aXc0ZWwzMnJiM3J4bDVnOGoxbDkwaXIwbjd2NmZpdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L95W4wv8nnb9K/giphy.gif",
+
+"https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyZmE3NjQyazVhNnR3dWczNWF6ZXhwbTFhb3pnOGx0d3JqbGM5aW03dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BEob5qwFkSJ7G/giphy.gif",
+
+"https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyb3Z1dm03dDdueWdhZ2VxYXdpbWJrczY0dWc0NTQ0bmthc2U2bW5ndSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hiNS1VWfrdDr4SPbaz/giphy.gif",
+
+"https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyNjB2bGZtZ216MzN6azhsZ2Y1ZGpqd25ubHhnd24yOW9tbW1hNnp3cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lGBecpB2dIMwt6ohfI/giphy.gif",
+
+"https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyMWdqb3l2Nm03eGNuNmR4bjIxZ3lsMmV3N2tnMXoxYXQ2bnoyMjVvOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qQdL532ZANbjy/giphy.gif",
+
+"https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUydHIyZzlmcXljNnFtbnRlNG1leTljeHk4MGN6Z3o5ZWZpOTVjNGg2dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kUYWowJqB78jK/giphy.gif",
+
+"https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyZGRwNnJqMHVlcHQ3dDExNzB3Z2Z1cHliNnZyN3Y4ZzJienV2cHRyMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4EoRJQtCRySlSwHS/giphy.gif",
+
+"https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyaDB4bTNjOGQ1OXV3d2tiOWV4cXU0czJ4d3doZ3RhdjkxczlwZWU4cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/on9LDLF5JskaQ/giphy.gif"
+
+];
+
+/* NO BUTTON */
+
+noBtn.addEventListener("click",()=>{
+
+    count++;
+
+    if(count < 8){
+
+        title.innerText =
+        titles[count - 1];
+
+        text.innerText =
+        texts[count - 1];
+
+        image.src =
+        gifs[count - 1];
+
+        const area =
+        document.querySelector(".button-area");
+
+        const areaWidth =
+        area.clientWidth;
+
+        const areaHeight =
+        area.clientHeight;
+
+        const btnWidth =
+        noBtn.offsetWidth;
+
+        const btnHeight =
+        noBtn.offsetHeight;
+
+        const randomX =
+        Math.random() *
+        (areaWidth - btnWidth - 10);
+
+        const randomY =
+        Math.random() *
+        (areaHeight - btnHeight - 10);
+
+        noBtn.style.left =
+        `${randomX}px`;
+
+        noBtn.style.top =
+        `${randomY}px`;
+
+    }
+
+    else{
+
+        location.reload();
+
+    }
+
+});
+
+/* YES BUTTON */
+
+document
+.getElementById("yesBtn")
+.addEventListener("click",()=>{
+
+    document.body.style.transition =
+    ".8s";
+
+    document.body.style.opacity =
+    "0";
+
+    setTimeout(()=>{
+
+        window.location.href =
+        "sona2.html";
+
+    },700);
+
+});
+
+</script>
+
+</body>
+</html>
