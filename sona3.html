@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>i love you ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:70px 18px;
+
+    overflow-x:hidden;
+
+    position:relative;
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    linear-gradient(
+    135deg,
+    #fff0f5 0%,
+    #ffe5ef 25%,
+    #fff8fb 55%,
+    #ffe2ee 100%
+    );
+}
+
+/* =========================
+   TEXTURE
+========================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+
+    radial-gradient(
+    rgba(255,255,255,0.45) 1px,
+    transparent 1px
+    );
+
+    background-size:30px 30px;
+
+    opacity:0.5;
+
+    animation:textureMove 20s linear infinite;
+
+    z-index:-6;
+}
+
+@keyframes textureMove{
+
+    0%{
+        transform:translate(0px,0px);
+    }
+
+    100%{
+        transform:translate(-120px,-120px);
+    }
+
+}
+
+/* =========================
+   AURORA
+========================= */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:180%;
+    height:180%;
+
+    background:
+
+    radial-gradient(
+    circle at 20% 20%,
+    rgba(255,182,193,0.35),
+    transparent 30%
+    ),
+
+    radial-gradient(
+    circle at 80% 30%,
+    rgba(255,220,230,0.30),
+    transparent 30%
+    ),
+
+    radial-gradient(
+    circle at 50% 80%,
+    rgba(255,245,248,0.45),
+    transparent 35%
+    );
+
+    filter:blur(25px);
+
+    animation:auroraMove 14s ease-in-out infinite alternate;
+
+    z-index:-7;
+}
+
+@keyframes auroraMove{
+
+    0%{
+
+        transform:
+        rotate(0deg)
+        scale(1);
+    }
+
+    100%{
+
+        transform:
+        rotate(10deg)
+        scale(1.08);
+    }
+
+}
+
+/* =========================
+   BLOBS
+========================= */
+
+.blob{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(110px);
+
+    opacity:0.5;
+
+    animation:blobMove 9s ease-in-out infinite;
+}
+
+.blob1{
+
+    width:300px;
+    height:300px;
+
+    background:#ffc5d8;
+
+    top:-100px;
+    left:-100px;
+}
+
+.blob2{
+
+    width:350px;
+    height:350px;
+
+    background:#ffdce8;
+
+    bottom:-140px;
+    right:-120px;
+}
+
+.blob3{
+
+    width:220px;
+    height:220px;
+
+    background:#fff5f8;
+
+    top:40%;
+    left:42%;
+}
+
+@keyframes blobMove{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-30px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floaters{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-2;
+}
+
+.floaters span{
+
+    position:absolute;
+
+    bottom:-120px;
+
+    font-size:24px;
+
+    opacity:0.75;
+
+    animation:floatEmoji linear infinite;
+}
+
+.floaters span:nth-child(1){
+
+    left:8%;
+    animation-duration:13s;
+}
+
+.floaters span:nth-child(2){
+
+    left:22%;
+    animation-duration:18s;
+}
+
+.floaters span:nth-child(3){
+
+    left:38%;
+    animation-duration:15s;
+}
+
+.floaters span:nth-child(4){
+
+    left:56%;
+    animation-duration:16s;
+}
+
+.floaters span:nth-child(5){
+
+    left:74%;
+    animation-duration:12s;
+}
+
+.floaters span:nth-child(6){
+
+    left:90%;
+    animation-duration:17s;
+}
+
+@keyframes floatEmoji{
+
+    0%{
+
+        transform:
+        translateY(0px)
+        rotate(0deg);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:0.8;
+    }
+
+    100%{
+
+        transform:
+        translateY(-130vh)
+        rotate(360deg);
+
+        opacity:0;
+    }
+
+}
+
+/* =========================
+   FINAL GLASS CARD
+========================= */
+
+.card{
+
+    width:min(900px,100%);
+
+    position:relative;
+
+    background:
+    rgba(255,255,255,0.28);
+
+    backdrop-filter:blur(35px);
+
+    -webkit-backdrop-filter:blur(35px);
+
+    border:1px solid rgba(255,255,255,0.45);
+
+    border-radius:42px;
+
+    padding:32px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 20px 60px rgba(255,182,193,0.20);
+
+    animation:cardShow 1s ease;
+
+    z-index:5;
+}
+
+/* SHINE */
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-50%;
+    left:-50%;
+
+    width:200%;
+    height:200%;
+
+    background:
+    linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+    );
+
+    transform:rotate(25deg);
+
+    animation:shine 8s linear infinite;
+}
+
+@keyframes shine{
+
+    0%{
+
+        transform:
+        translateX(-100%)
+        rotate(25deg);
+    }
+
+    100%{
+
+        transform:
+        translateX(100%)
+        rotate(25deg);
+    }
+
+}
+
+@keyframes cardShow{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(40px)
+        scale(0.95);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0px)
+        scale(1);
+    }
+
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.hero{
+
+    width:100%;
+
+    height:430px;
+
+    border-radius:34px;
+
+    overflow:hidden;
+
+    margin-bottom:35px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+}
+
+.hero img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    animation:zoom 12s ease-in-out infinite;
+}
+
+@keyframes zoom{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.05);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+/* =========================
+   TITLE
+========================= */
+
+h1{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:72px;
+
+    text-align:center;
+
+    color:#603847;
+
+    margin-bottom:22px;
+
+    line-height:1;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.text{
+
+    width:min(760px,95%);
+
+    margin:auto;
+
+    text-align:center;
+
+    line-height:2.1;
+
+    font-size:16px;
+
+    color:#7b5d67;
+
+    margin-bottom:45px;
+}
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+.letter{
+
+    position:relative;
+
+    background:
+    rgba(255,255,255,0.24);
+
+    backdrop-filter:blur(25px);
+
+    -webkit-backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,0.45);
+
+    border-radius:30px;
+
+    padding:28px;
+
+    overflow:hidden;
+
+    margin-top:10px;
+
+    box-shadow:
+    0 10px 25px rgba(255,182,193,0.12);
+}
+
+.letter::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-50%;
+    left:-50%;
+
+    width:200%;
+    height:200%;
+
+    background:
+    linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.18),
+    transparent
+    );
+
+    transform:rotate(25deg);
+
+    animation:miniShine 7s linear infinite;
+}
+
+@keyframes miniShine{
+
+    0%{
+
+        transform:
+        translateX(-100%)
+        rotate(25deg);
+    }
+
+    100%{
+
+        transform:
+        translateX(100%)
+        rotate(25deg);
+    }
+
+}
+
+.letter p{
+
+    position:relative;
+
+    text-align:center;
+
+    line-height:2.1;
+
+    color:#7b5d67;
+
+    font-size:15px;
+
+    z-index:2;
+}
+
+/* =========================
+   FINAL LINE
+========================= */
+
+.final-line{
+
+    margin-top:42px;
+
+    text-align:center;
+
+    font-size:24px;
+
+    line-height:2;
+
+    font-weight:600;
+
+    color:#f0b845;
+
+    text-shadow:
+    0 0 12px rgba(240,184,69,0.35);
+
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.03);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+/* =========================
+   END BUTTON
+========================= */
+
+.end-btn{
+
+    display:block;
+
+    margin:45px auto 0;
+
+    padding:16px 62px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #ff9fbe,
+    #ff6d9e
+    );
+
+    color:white;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:
+    0 10px 25px rgba(255,109,158,0.25);
+}
+
+.end-btn:hover{
+
+    transform:
+    scale(1.06);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    body{
+        padding:40px 14px;
+    }
+
+    h1{
+        font-size:48px;
+    }
+
+    .hero{
+        height:280px;
+    }
+
+    .text{
+        font-size:14px;
+        line-height:1.9;
+    }
+
+    .final-line{
+        font-size:18px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- BLOBS -->
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
+
+<!-- FLOATERS -->
+
+<div class="floaters">
+
+<span>💗</span>
+<span>🌸</span>
+<span>✨</span>
+<span>🤍</span>
+<span>🫶</span>
+<span>💞</span>
+
+</div>
+
+<!-- CARD -->
+
+<div class="card">
+
+    <!-- IMAGE -->
+
+    <div class="hero">
+        <img src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUybDZoMXA2cWFhdWFlZDI1ZzY2N2V4MHAxMTduOWtmcDcwMmp2a3R1bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IRUb7GTCaPU8E/giphy.gif">
+    </div>
+
+    <!-- TITLE -->
+
+    <h1>
+        i still love you
+    </h1>
+
+    <!-- TEXT -->
+
+    <p class="text">
+
+        maybe i don't deserve another chance.
+        maybe you're still hurt because of me.
+
+        but despite everything...
+        my feelings for you never became fake.
+
+        i know i failed you again.
+        but if life gives me another chance with you,
+        i promise i'll love you more carefully this time,never ever cheat on u like not even kidding seriously.
+
+    </p>
+
+    <!-- LOVE LETTER -->
+
+    <div class="letter">
+
+        <p>
+
+            thank you for every small thing you ever did for me.
+
+            for every busy reply you still answered,
+            every moment you stayed,
+            every time you cared even when i made things difficult.
+
+            you became a comfort to me in ways i never explained properly.
+
+            and honestly...
+            losing you feels heavier than i expected.
+
+            i don't know what happens after this page,
+            but i just needed you to know that my heart still chooses you.
+            
+            i'll never cheat on u xbox pass
+            mayankpathak1415@gmail.com mayank12309
+
+  
+        </p>
+
+    </div>
+
+    <!-- FINAL LINE -->
+
+    <p class="final-line">
+
+        no matter what happens next...
+        you'll always be special to me 💛
+
+    </p>
+
+    <!-- BUTTON -->
+
+    <button class="end-btn"
+    onclick="alert('am not forcing u to choose me but i really want u, thank you for reading till the end ♡')">
+
+        forever you ♡
+
+    </button>
+
+</div>
+
+</body>
+</html>
