@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>for you ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:70px 18px;
+
+    overflow-x:hidden;
+
+    position:relative;
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    linear-gradient(
+    135deg,
+    #fff0f5 0%,
+    #ffe6ef 25%,
+    #fff7fa 55%,
+    #ffe3ef 100%
+    );
+}
+
+/* =========================
+   MOVING TEXTURE
+========================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+
+    radial-gradient(
+    rgba(255,255,255,0.45) 1px,
+    transparent 1px
+    );
+
+    background-size:30px 30px;
+
+    opacity:0.5;
+
+    animation:textureMove 20s linear infinite;
+
+    z-index:-5;
+}
+
+@keyframes textureMove{
+
+    0%{
+        transform:translate(0px,0px);
+    }
+
+    100%{
+        transform:translate(-120px,-120px);
+    }
+
+}
+
+/* =========================
+   AURORA BACKGROUND
+========================= */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:180%;
+    height:180%;
+
+    background:
+
+    radial-gradient(
+    circle at 20% 20%,
+    rgba(255,182,193,0.35),
+    transparent 30%
+    ),
+
+    radial-gradient(
+    circle at 80% 30%,
+    rgba(255,220,230,0.30),
+    transparent 30%
+    ),
+
+    radial-gradient(
+    circle at 50% 80%,
+    rgba(255,245,248,0.45),
+    transparent 35%
+    );
+
+    filter:blur(25px);
+
+    animation:auroraMove 15s ease-in-out infinite alternate;
+
+    z-index:-6;
+}
+
+@keyframes auroraMove{
+
+    0%{
+
+        transform:
+        rotate(0deg)
+        scale(1);
+    }
+
+    100%{
+
+        transform:
+        rotate(10deg)
+        scale(1.08);
+    }
+
+}
+
+/* =========================
+   FLOATING LIGHT BLOBS
+========================= */
+
+.blob{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(110px);
+
+    opacity:0.5;
+
+    animation:blobMove 9s ease-in-out infinite;
+}
+
+.blob1{
+
+    width:280px;
+    height:280px;
+
+    background:#ffc5d8;
+
+    top:-100px;
+    left:-100px;
+}
+
+.blob2{
+
+    width:340px;
+    height:340px;
+
+    background:#ffdce8;
+
+    bottom:-140px;
+    right:-120px;
+}
+
+.blob3{
+
+    width:220px;
+    height:220px;
+
+    background:#fff4f8;
+
+    top:40%;
+    left:42%;
+}
+
+@keyframes blobMove{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-30px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* =========================
+   FLOATING EMOJIS
+========================= */
+
+.floaters{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-2;
+}
+
+.floaters span{
+
+    position:absolute;
+
+    bottom:-120px;
+
+    font-size:24px;
+
+    opacity:0.75;
+
+    animation:floatEmoji linear infinite;
+}
+
+.floaters span:nth-child(1){
+
+    left:8%;
+    animation-duration:13s;
+}
+
+.floaters span:nth-child(2){
+
+    left:22%;
+    animation-duration:18s;
+}
+
+.floaters span:nth-child(3){
+
+    left:38%;
+    animation-duration:15s;
+}
+
+.floaters span:nth-child(4){
+
+    left:56%;
+    animation-duration:16s;
+}
+
+.floaters span:nth-child(5){
+
+    left:74%;
+    animation-duration:12s;
+}
+
+.floaters span:nth-child(6){
+
+    left:90%;
+    animation-duration:17s;
+}
+
+@keyframes floatEmoji{
+
+    0%{
+
+        transform:
+        translateY(0px)
+        rotate(0deg);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:0.8;
+    }
+
+    100%{
+
+        transform:
+        translateY(-130vh)
+        rotate(360deg);
+
+        opacity:0;
+    }
+
+}
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.card{
+
+    width:min(950px,100%);
+
+    position:relative;
+
+    background:
+    rgba(255,255,255,0.28);
+
+    backdrop-filter:blur(30px);
+
+    -webkit-backdrop-filter:blur(30px);
+
+    border:1px solid rgba(255,255,255,0.45);
+
+    border-radius:42px;
+
+    padding:28px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 20px 60px rgba(255,182,193,0.20);
+
+    animation:cardShow 1s ease;
+
+    z-index:5;
+}
+
+/* GLASS SHINE */
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-50%;
+    left:-50%;
+
+    width:200%;
+    height:200%;
+
+    background:
+    linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.22),
+    transparent
+    );
+
+    transform:rotate(25deg);
+
+    animation:shine 8s linear infinite;
+}
+
+@keyframes shine{
+
+    0%{
+
+        transform:
+        translateX(-100%)
+        rotate(25deg);
+    }
+
+    100%{
+
+        transform:
+        translateX(100%)
+        rotate(25deg);
+    }
+
+}
+
+@keyframes cardShow{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(40px)
+        scale(0.95);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0px)
+        scale(1);
+    }
+
+}
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.hero{
+
+    width:100%;
+
+    height:430px;
+
+    border-radius:34px;
+
+    overflow:hidden;
+
+    margin-bottom:35px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+}
+
+.hero img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    animation:zoom 12s ease-in-out infinite;
+}
+
+@keyframes zoom{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.05);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+/* =========================
+   TEXT
+========================= */
+
+h1{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:68px;
+
+    text-align:center;
+
+    color:#603847;
+
+    margin-bottom:20px;
+
+    line-height:1;
+}
+
+.main-text{
+
+    width:min(760px,95%);
+
+    margin:auto;
+
+    text-align:center;
+
+    line-height:2.1;
+
+    font-size:16px;
+
+    color:#7b5d67;
+
+    margin-bottom:45px;
+}
+
+/* =========================
+   MEMORIES
+========================= */
+
+.memories{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(200px,1fr));
+
+    gap:18px;
+
+    margin-top:15px;
+}
+
+.memory{
+
+    background:
+    rgba(255,255,255,0.30);
+
+    border:1px solid rgba(255,255,255,0.45);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    transition:0.4s;
+
+    box-shadow:
+    0 10px 25px rgba(255,182,193,0.12);
+}
+
+.memory:hover{
+
+    transform:
+    translateY(-8px)
+    scale(1.02);
+}
+
+.memory img{
+
+    width:100%;
+
+    height:230px;
+
+    object-fit:cover;
+}
+
+.memory p{
+
+    padding:18px;
+
+    text-align:center;
+
+    line-height:1.9;
+
+    color:#7a5c66;
+
+    font-size:14px;
+}
+
+/* =========================
+   FINAL LINE
+========================= */
+
+.bottom{
+
+    margin-top:42px;
+
+    text-align:center;
+
+    font-size:20px;
+
+    line-height:2;
+
+    font-weight:600;
+
+    color:#f0b845;
+
+    text-shadow:
+    0 0 12px rgba(240,184,69,0.35);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.next-btn{
+
+    display:block;
+
+    margin:42px auto 0;
+
+    padding:15px 58px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #ff9fbe,
+    #ff6d9e
+    );
+
+    color:white;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:
+    0 10px 25px rgba(255,109,158,0.25);
+}
+
+.next-btn:hover{
+
+    transform:
+    scale(1.06);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    body{
+        padding:40px 14px;
+    }
+
+    h1{
+        font-size:48px;
+    }
+
+    .hero{
+        height:280px;
+    }
+
+    .main-text{
+        font-size:14px;
+        line-height:1.9;
+    }
+
+    .bottom{
+        font-size:17px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- BLOBS -->
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
+
+<!-- FLOATERS -->
+
+<div class="floaters">
+
+<span>💗</span>
+<span>🌸</span>
+<span>✨</span>
+<span>🤍</span>
+<span>🫶</span>
+<span>💞</span>
+
+</div>
+
+<!-- CARD -->
+
+<div class="card">
+
+    <!-- HERO -->
+
+    <div class="hero">
+        <img src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyMGl6dWZma3ZzZWcyc3M0aDlhNHJtNnVhaXJiMXVobzFyanp2b25idSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/o03ctbYEV55kI/giphy.gif">
+    </div>
+
+    <!-- TITLE -->
+
+    <h1>
+        i still choose you
+    </h1>
+
+    <!-- TEXT -->
+
+    <p class="main-text">
+
+        I know I hurt you.  
+And the worst part is... you warned me so many times, yet I still became the reason you're hurting today.
+
+I know a simple sorry cannot fix everything magically.  
+But the thought of losing you honestly scares me more than accepting how badly I messed up.
+
+When you say things like “you don't need me anymore” or “you don't want me anymore”... it genuinely hurts me more than I can explain.
+
+You cared about me in a way nobody else ever did.  
+The way you listened to me, stayed with me, understood my mood swings, tolerated my stupidity, and still loved me despite everything...
+
+I got too attached to you without even realizing it.
+
+And now I regret everything so badly.
+
+Maybe right now you think I'll repeat the same mistake again.  
+But I swear on my feelings for you... I don't want anybody else anymore.
+
+I already stopped talking to her because at the end of the day, it was never her I wanted.
+
+It was always you. 🥹
+
+    </p>
+
+    <!-- MEMORIES -->
+
+    <div class="memories">
+
+        <div class="memory">
+
+            <img src="sona1.jpg">
+
+            <p>
+                every moment with you felt peaceful in a way i can't explain, that 1hr 🥹🤌🏼
+            </p>
+
+        </div>
+
+        <div class="memory">
+
+            <img src="sona2.jpg">
+
+            <p>
+                i took this pic irl🌸🌼💐
+            </p>
+
+        </div>
+
+        <div class="memory">
+
+            <img src="sona3.jpg">
+
+            <p>
+                that hide n seek 🛐🎀
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- FINAL -->
+
+    <p class="bottom">
+
+        i don't wanna lose you.
+        the way you cared about me meant more than you know 💛
+
+    </p>
+
+    <!-- BUTTON -->
+
+    <button class="next-btn"
+    onclick="window.location.href='sona3.html'">
+
+        next page ♡
+
+    </button>
+
+</div>
+
+</body>
+  </html>
